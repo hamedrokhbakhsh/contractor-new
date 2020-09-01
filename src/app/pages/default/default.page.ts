@@ -15,6 +15,11 @@ export class DefaultPage implements OnInit {
       title: 'پنل روزانه',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'جزیئیات',
+      url: 'full',
+      icon: 'receipt'
     }
   ];
 
