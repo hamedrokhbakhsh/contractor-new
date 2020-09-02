@@ -11,17 +11,31 @@
           </ion-card-header>
 
           <ion-card-content>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="login()">
               <ion-item class="item-input">
                 <ion-label position="floating" class="text-style button">نام کاربری</ion-label>
-                <ion-input  class="item-form ion-text-center ltr"
-                            type="number"></ion-input>
+                <ion-input formControlName="username"  class="item-form ion-text-center ltr"
+                            type="text"></ion-input>
               </ion-item>
+              <div class="validation-box">
+                <div *ngIf="form.get('username').valid">&nbsp;</div>
+                <div *ngIf="form.get('username').invalid && isSubmit">
+                  <ion-icon name="information-circle" size="small"></ion-icon>
+                  <span>نام کاربری را وارد کنید.</span>
+                </div>
+              </div>
               <ion-item class="item-input">
                 <ion-label position="floating" class="text-style button">رمز ورود</ion-label>
-                <ion-input  class="item-form ion-text-center ltr"
-                            type="number"></ion-input>
+                <ion-input  formControlName="password" class="item-form ion-text-center ltr"
+                            type="password"></ion-input>
               </ion-item>
+              <div class="validation-box">
+                <div *ngIf="form.get('password').valid">&nbsp;</div>
+                <div *ngIf="form.get('password').invalid && isSubmit">
+                  <ion-icon name="information-circle" size="small"></ion-icon>
+                  <span>رمز عبور را وارد کنید.</span>
+                </div>
+              </div>
               <button type="submit" class="mt-4 btn btn-block btn-outline-light btn-ghost">تایید</button>
             </form>
 

@@ -11,23 +11,29 @@
           </ion-card-header>
 
           <ion-card-content>
-            <form>
+            <form  [formGroup]="getFormIP" (ngSubmit)="checkIp()">
               <ion-item class="item-input">
                 <ion-label position="floating" class="text-style button">کد مجموعه</ion-label>
-                <ion-input  class="item-form ion-text-center ltr"
+                <ion-input formControlName="codeIp"  class="item-form ion-text-center ltr"
                            type="number"></ion-input>
               </ion-item>
-              <button type="submit" class="mt-4 btn btn-block btn-outline-light btn-ghost">ارسال</button>
+              <div class="validation-box">
+                <div *ngIf="getFormIP.invalid">&nbsp;</div>
+                <div *ngIf="getFormIP.invalid && isSubmit">
+                  <ion-icon name="information-circle" size="small"></ion-icon>
+                  <span>شماره کد خود را بدرستی وارد کنید.</span>
+                </div>
+              </div>
+              <button [disabled]="loading"   type="submit" class="mt-4  btn btn-block btn-outline-light btn-ghost">
+                <ion-spinner style="height: 15px" *ngIf="loading"></ion-spinner>
+                <span *ngIf="!loading"  class="m-1">ارسال کد مجموعه</span>
+              </button>
             </form>
 
           </ion-card-content>
         </ion-card>
 
       </div>
-
-
-
-
     </div>
 
 

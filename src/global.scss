@@ -31,3 +31,10 @@ ion-router-outlet > *{
   background-size: cover;
   background-position: center bottom;
 }
+
+
+.secondary{
+  text-align: center;
+  --background: rgba(255,255,255,0.9);
+  color: #000
+}
