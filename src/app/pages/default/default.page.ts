@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {AppService} from '../../services/app.service';
 
 @Component({
   selector: 'app-default',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router , private  service : AppService) { }
 
   public selectedIndex = 0;
   public appPages = [
@@ -31,6 +33,7 @@ export class DefaultPage implements OnInit {
   }
 
   logout() {
-    console.log('logout')
+    this.service.logout();
+    this.router.navigate(['/login']);
   }
 }

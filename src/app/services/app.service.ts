@@ -32,4 +32,15 @@ export class AppService {
     localStorage.setItem('name' , name);
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('url-address');
+    localStorage.removeItem('name');
+    return true ;
+  }
+
+
+  isLogin(){
+    return localStorage.getItem('token') != null ;
+  }
 }
