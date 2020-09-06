@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'full',
         loadChildren: () => import('../full-reception/full-reception-routing.module').then(value => value.FullReceptionPageRoutingModule)
+      },
+      {
+        path: 'detail',
+        loadChildren: () => import('../detail-reception/detail-reception.module').then( m => m.DetailReceptionPageModule)
       }
     ]
   }

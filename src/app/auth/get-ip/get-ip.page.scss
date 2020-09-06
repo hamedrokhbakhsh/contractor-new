@@ -6,6 +6,9 @@ ion-card{
   --background: rgba(0, 0, 0, 0.8) ;
   margin-top: 10%;
 }
+ion-content{
+  --background: rgba(0, 0, 0, 0.8);
+}
 ion-card-title{
   color: white;
 }
@@ -48,11 +51,14 @@ ion-item{
   min-height: 15px;
   width: 100%;
   font-size: small;
-  color: red;
+  color: yellow;
   margin-top: 5px;
   height: 20px;
   > div{
     display: inline-flex;
     align-items: center;
   }
+}
+img{
+  margin-top: 10%;
 }

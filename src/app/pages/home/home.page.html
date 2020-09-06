@@ -1,9 +1,91 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+  <ion-toolbar class="no-bg">
+    <ion-buttons slot="end">
+      <img class="logo-header ion-margin-start" height="50px" src="assets/logo.svg"/>
+    </ion-buttons>
+    <ion-title class="ion-text-center">پنل روزانه</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-button fill="outline" slot="end">فیلتر</ion-button>
+    </ion-item>
+
+    <ion-card-content class="justify-content-between d-flex">
+      <div class="justify-content-around d-flex">
+        <ion-label class="ml-2"><ion-icon name="calendar-outline"></ion-icon></ion-label>
+        تاریخ روز
+      </div>
+      <div>
+        شنبه 12 فروردین 1399
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>ثبت نامی</ion-label>
+      <ion-button fill="outline" slot="end">جزئیات</ion-button>
+    </ion-item>
+
+  <ion-card-content>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-between">
+        <div class="col text-right">
+          تعداد
+        </div>
+        <div class="col">
+          45
+        </div>
+      </div>
+      <div class="row d-flex justify-content-between">
+        <div class="col text-right">
+          مبلغ
+        </div>
+        <div class="col">
+          4200000
+        </div>
+      </div>
+    </div>
+
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label> تک جلسه ای</ion-label>
+      <ion-button fill="outline" slot="end">جزئیات</ion-button>
+    </ion-item>
+
+    <ion-card-content>
+      <div class="container-fluid">
+        <div class="row d-flex justify-content-between">
+          <div class="col text-right">
+            تعداد
+          </div>
+          <div class="col">
+            45
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col text-right">
+            مبلغ
+          </div>
+          <div class="col">
+            4200000
+          </div>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

@@ -15,12 +15,17 @@ export class DefaultPage implements OnInit {
   public appPages = [
     {
       title: 'پنل روزانه',
-      url: '/home',
+      url: '',
       icon: 'home'
     },
     {
-      title: 'جزیئیات',
-      url: 'full',
+      title: 'ثبت نامی',
+      url: '/home/full',
+      icon: 'receipt'
+    },
+    {
+      title: 'تک جلسه ای',
+      url: '/home/detail',
       icon: 'receipt'
     }
   ];
@@ -34,6 +39,6 @@ export class DefaultPage implements OnInit {
 
   logout() {
     this.service.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then();
   }
 }

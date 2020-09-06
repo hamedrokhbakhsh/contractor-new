@@ -11,6 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './services/app.service';
 import { ToastService } from './services/toast.service';
+import {AuthGuard} from './guard/auth.guard';
+import {UnAuthGuard} from './guard/un-auth.guard';
+import {IpAuthGuard} from './guard/ip-auth.guard';
+import {SharedModule} from './shared/shared/shared.module';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +31,9 @@ import { ToastService } from './services/toast.service';
     SplashScreen,
     ToastService,
     AppService ,
+    IpAuthGuard,
+    UnAuthGuard ,
+    AuthGuard ,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

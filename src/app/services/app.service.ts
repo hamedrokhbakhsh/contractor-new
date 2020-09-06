@@ -43,4 +43,7 @@ export class AppService {
   isLogin(){
     return localStorage.getItem('token') != null ;
   }
+  isHasUrl(): boolean {
+    return localStorage.getItem('url-address') != null;
+  }
 }

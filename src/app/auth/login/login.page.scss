@@ -2,23 +2,16 @@ img{
   width: 100px;
   height: 100px;
 }
-ion-card{
-  --background: rgba(0, 0, 0, 0.8) ;
-  margin-top: 10%;
-}
-ion-card-title{
-  color: white;
-}
-ion-input{
 
-}
 ion-item{
   padding: 0px;
   margin: 0px;
   --background: transparent;
   color: white;
 }
-
+.img{
+  margin-top: 10%;
+}
 .btn {
   padding: 8px 20px;
   border-radius: 0;
@@ -48,7 +41,7 @@ ion-item{
   min-height: 15px;
   width: 100%;
   font-size: small;
-  color: red;
+  color: yellow;
   margin-top: 5px;
   height: 20px;
   > div{
@@ -56,3 +49,7 @@ ion-item{
     align-items: center;
   }
 }
+ion-content{
+  --background: rgba(0, 0, 0, 0.8) ;
+}
+
