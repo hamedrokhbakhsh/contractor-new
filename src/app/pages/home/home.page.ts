@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  filter = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  filterButton() {
+    this.filter = !this.filter ;
+  }
+
+
+  filtering($event: any) {
+    console.log($event)
+  }
 }

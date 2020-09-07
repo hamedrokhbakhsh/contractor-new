@@ -14,7 +14,8 @@
   <ion-card>
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-button fill="outline" slot="end">فیلتر</ion-button>
+
+      <ion-button fill="outline" slot="end" (click)="filterButton()">فیلتر</ion-button>
     </ion-item>
 
     <ion-card-content class="justify-content-between d-flex">
@@ -29,8 +30,8 @@
     </ion-card-content>
   </ion-card>
   <ion-card>
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-item >
+      <ion-icon name="checkmark-done-outline" class="ml-3"></ion-icon>
       <ion-label>ثبت نامی</ion-label>
       <ion-button fill="outline" slot="end">جزئیات</ion-button>
     </ion-item>
@@ -42,7 +43,7 @@
           تعداد
         </div>
         <div class="col">
-          45
+          45  <ion-icon name="body-outline"></ion-icon>
         </div>
       </div>
       <div class="row d-flex justify-content-between">
@@ -60,7 +61,7 @@
 
   <ion-card>
     <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-icon name="checkmark-outline" class="ml-3"></ion-icon>
       <ion-label> تک جلسه ای</ion-label>
       <ion-button fill="outline" slot="end">جزئیات</ion-button>
     </ion-item>
@@ -72,7 +73,7 @@
             تعداد
           </div>
           <div class="col">
-            45
+            45   <ion-icon name="body-outline"></ion-icon>
           </div>
         </div>
         <div class="row d-flex justify-content-between">
@@ -89,3 +90,6 @@
   </ion-card>
 
 </ion-content>
+<ion-footer *ngIf="filter">
+  <app-filter (open)="filtering($event)"></app-filter>
+</ion-footer>

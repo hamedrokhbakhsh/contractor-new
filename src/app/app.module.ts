@@ -14,7 +14,8 @@ import { ToastService } from './services/toast.service';
 import {AuthGuard} from './guard/auth.guard';
 import {UnAuthGuard} from './guard/un-auth.guard';
 import {IpAuthGuard} from './guard/ip-auth.guard';
-import {SharedModule} from './shared/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {SharedModule} from './shared/shared/shared.module';
     BrowserModule,
     IonicModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [
     StatusBar,

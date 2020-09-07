@@ -1,0 +1,9 @@
+<ion-toolbar>
+
+  <ion-item (click)="openDatePicker()">
+    <ion-icon color="primary" slot="start"  name="calendar-outline"></ion-icon>
+    <ion-label>{{title}}</ion-label>
+    <ion-label slot="end" color="primary" class="ion-text-end" >{{date?.pDate?.locale('fa').format('dddd,jDD jMMMM  jYYYY')}}</ion-label>
+  </ion-item>
+
+</ion-toolbar>

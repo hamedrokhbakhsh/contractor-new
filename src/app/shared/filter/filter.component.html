@@ -1,0 +1,12 @@
+<ion-toolbar>
+    <ion-list>
+      <app-date [before]="textDateFrom" (open)="setFromDate($event)"></app-date>
+    </ion-list>
+    <ion-list>
+        <app-date [before]="textDateUntil" (open)="setUntilDate($event)"></app-date>
+    </ion-list>
+    <ion-button  (click)="filterAction()" color="primary"
+                 expand="block">
+        اعمال فیلتر
+    </ion-button>
+</ion-toolbar>
