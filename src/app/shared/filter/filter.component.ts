@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FilterData} from '../../models/filter-data';
 
 @Component({
   selector: 'app-filter',
@@ -6,28 +7,27 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  textDateFrom = 'از تاریخ';
-  textDateUntil = 'تا تاریخ';
-
-  @Output() open: EventEmitter<any> = new EventEmitter();
-
-  data = {
-    from: '' ,
-    until: ''
+  getTodayDate = new Date();
+  data: FilterData = {
+    from: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate(),
+    until: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate()
   };
+  textDateUntil = 'تا تاریخ';
+  textDateFrom = 'از تاریخ';
+
+  @Output() filterData: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {}
-
   setFromDate(from: string) {
     this.data.from = from ;
   }
 
   setUntilDate(until: string) {
-    this.data.until = until ;
+    this.data.until = until;
   }
 
   filterAction() {
-    this.open.emit(this.data);
+    this.filterData.emit(this.data);
   }
 }

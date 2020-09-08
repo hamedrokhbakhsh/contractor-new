@@ -4,6 +4,7 @@ import {Ip} from '../models/ip';
 import {HttpClient} from '@angular/common/http';
 import {appconfig} from '../app-config';
 import {ResponseModel} from '../models/response-model';
+import {FilterData} from '../models/filter-data';
 
 
 @Injectable({
@@ -20,12 +21,15 @@ export class AppService {
     return this.http.get<Ip>(`${appconfig.api}`);
   }
 
-  authUser(data: ResponseModel): Observable<any> {
+  authUser(data: any): Observable<any> {
 
     // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
     return this.http.post<ResponseModel>('http://localhost:5001/contractor/login', data);
   }
-
+  firstPage(data: FilterData): Observable<any> {
+    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>('http://localhost:5001/contractor/first-page', data);
+  }
 
   storeUserId(token , name){
     localStorage.setItem('token', token) ;

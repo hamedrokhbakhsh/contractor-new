@@ -1,12 +1,27 @@
-<ion-toolbar>
-    <ion-list>
-      <app-date [before]="textDateFrom" (open)="setFromDate($event)"></app-date>
-    </ion-list>
-    <ion-list>
-        <app-date [before]="textDateUntil" (open)="setUntilDate($event)"></app-date>
-    </ion-list>
-    <ion-button  (click)="filterAction()" color="primary"
-                 expand="block">
-        اعمال فیلتر
-    </ion-button>
-</ion-toolbar>
+<ion-list class="m-0">
+  <ion-item>
+    <ion-label>
+      <ion-row>
+        <app-date style="width: 100%" [before]="textDateFrom" (open)="setFromDate($event)"></app-date>
+      </ion-row>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-list>
+  <ion-item>
+    <ion-label>
+      <ion-row>
+        <app-date style="width: 100%" [before]="textDateUntil" (open)="setUntilDate($event)"></app-date>
+      </ion-row>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-list>
+  <ion-item>
+    <ion-label>
+      <ion-row>
+        <button (click)="filterAction()" class="btn btn-block btn-outline-danger">ok</button>
+      </ion-row>
+    </ion-label>
+  </ion-item>
+</ion-list>

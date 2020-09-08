@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import {FilterComponent} from '../../shared/filter/filter.component';
 import {DateComponent} from '../../shared/date/date.component';
+import {FilterComponent} from '../../shared/filter/filter.component';
 
 @NgModule({
   imports: [
@@ -16,8 +16,7 @@ import {DateComponent} from '../../shared/date/date.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule ,
-
   ],
-    declarations: [HomePage, FilterComponent, DateComponent]
+  declarations: [HomePage, FilterComponent, DateComponent]
 })
 export class HomePageModule {}
