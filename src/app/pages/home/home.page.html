@@ -12,42 +12,25 @@
 
 <ion-content>
   <ion-card>
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label class="ml-2"><ion-icon name="calendar-outline"></ion-icon></ion-label>
-      <ion-button fill="outline" slot="end" (click)="filterButton()">فیلتر</ion-button>
-    </ion-item>
-
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>
-            <ion-row>
-              <ion-col ><span>امروز :</span> </ion-col>
-              <ion-col class="ion-text-end"><span>{{date}}</span></ion-col>
-            </ion-row>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-      <div *ngIf="filter">
-        <app-filter (filterData)="dataFromFilter($event)"></app-filter>
-      </div>
-
-
-
+    <ion-card-content class="justify-content-between d-flex">
+          <ion-col class="text-right"><span> امروز :</span> </ion-col>
+          <ion-col class="ion-text-end"><span>{{date}}</span></ion-col>
 
 
     </ion-card-content>
   </ion-card>
   <ion-card>
-    <ion-item >
-      <ion-icon name="checkmark-done-outline" class="ml-3"></ion-icon>
-      <ion-label class="font">ثبت نامی</ion-label>
-      <ion-button fill="outline" slot="end" (click)="register()">جزئیات</ion-button>
-    </ion-item>
 
   <ion-card-content>
+
+
     <div class="container-fluid">
+      <div class="row d-flex justify-content-between">
+        <div class="col text-right">
+          <ion-icon  name="checkmark-done-outline" class="ml-3"></ion-icon>
+          <ion-label class="font">ثبت نامی</ion-label>
+        </div>
+      </div>
       <div class="row d-flex justify-content-between">
         <div class="col text-right">
           تعداد
@@ -70,14 +53,15 @@
   </ion-card>
 
   <ion-card>
-    <ion-item>
-      <ion-icon name="checkmark-outline" class="ml-3"></ion-icon>
-      <ion-label class="font"> تک جلسه ای</ion-label>
-      <ion-button fill="outline" slot="end" (click)="single()">جزئیات</ion-button>
-    </ion-item>
 
     <ion-card-content>
       <div class="container-fluid">
+        <div class="row d-flex justify-content-between">
+          <div class="col text-right">
+            <ion-icon name="checkmark-outline" class="ml-3"></ion-icon>
+            <ion-label class="font"> تک جلسه ای</ion-label>
+          </div>
+        </div>
         <div class="row d-flex justify-content-between">
           <div class="col text-right">
             تعداد
@@ -99,5 +83,32 @@
     </ion-card-content>
   </ion-card>
 
+
+  <ion-fab (click)="filterButton()" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button style="color: #0d0d0d" class="font ">
+       <span style="color: #0d0d0d">فیلتر</span>
+    </ion-fab-button>
+
+  </ion-fab>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ion-content>
+<ion-footer *ngIf="filter" class="m-0" style="--background: rgba(0, 0, 0, 0.8);">
+  <app-filter (filterData)="dataFromFilter($event)"></app-filter>
+</ion-footer>
 

@@ -17,7 +17,6 @@ import {IpAuthGuard} from './guard/ip-auth.guard';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

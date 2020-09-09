@@ -15,7 +15,7 @@ import {FilterComponent} from '../../shared/filter/filter.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule ,
+    HomePageRoutingModule
   ],
   declarations: [HomePage, FilterComponent, DateComponent]
 })

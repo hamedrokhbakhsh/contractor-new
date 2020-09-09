@@ -27,6 +27,8 @@ export class HomePage implements OnInit {
     from: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate(),
     until: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate()
   };
+    textDateFrom = 'از تاریخ';
+  textDateUntil = '  تا تاریخ';
   constructor(private toast: ToastService , private service: AppService , private router: Router) { }
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class HomePage implements OnInit {
   dataFromFilter(filterData: FilterData) {
     this.getData(filterData);
     this.filter = !this.filter ;
+    console.log(filterData);
   }
 
   getData(data: FilterData){
@@ -68,4 +71,5 @@ export class HomePage implements OnInit {
   register() {
     this.router.navigate(['/home/full']).then();
   }
+
 }

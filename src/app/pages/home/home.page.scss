@@ -1,4 +1,4 @@
- ion-content{
+ ion-content {
   --background: rgba(0, 0, 0, 0.8);
 
 }
@@ -8,7 +8,16 @@
 }
 .font{
   font-family: 'Cairo', sans-serif;
+
 }
  ion-card , span{
   font-family: 'Lalezar', cursive;
 }
+ion-card{
+  --background:rgba(0, 0, 0, 0.4);
+  color: white;
+}
+ ion-footer{
+   --background:rgba(0, 0, 0, 0.4);
+   color: black;
+ }
