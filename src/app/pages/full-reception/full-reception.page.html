@@ -1,9 +1,30 @@
+
 <ion-header>
-    <ion-toolbar>
-        <ion-title>ثبت نامی</ion-title>
-    </ion-toolbar>
+<ion-toolbar class="no-bg">
+
+    <ion-buttons slot="end">
+        <ion-button (click)="back()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">ثبت نامی</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+</ion-toolbar>
+
 </ion-header>
 
 <ion-content>
 
+
+
+
+
+    <ion-fab (click)="filterButton()" vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button style="color: #0d0d0d" class="font ">
+            <span style="color: #0d0d0d">فیلتر</span>
+        </ion-fab-button>
+
+    </ion-fab>
+
 </ion-content>
+

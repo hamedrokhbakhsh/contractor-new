@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FullReceptionPageRoutingModule } from './full-reception-routing.module';
 
 import { FullReceptionPage } from './full-reception.page';
+import {HomePageModule} from '../home/home.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        FullReceptionPageRoutingModule
+        FullReceptionPageRoutingModule,
+        HomePageModule
     ],
     declarations: [FullReceptionPage]
 })

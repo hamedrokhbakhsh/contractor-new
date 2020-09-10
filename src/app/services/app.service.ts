@@ -31,6 +31,21 @@ export class AppService {
     return this.http.post<ResponseModel>('http://localhost:5001/contractor/first-page', data);
   }
 
+  register(data: FilterData): Observable<any> {
+    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>('http://localhost:5001/contractor/register', data);
+  }
+
+  single(data: FilterData): Observable<any> {
+    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>('http://localhost:5001/contractor/single', data);
+  }
+
+
+
+
+
+
   storeUserId(token , name){
     localStorage.setItem('token', token) ;
     localStorage.setItem('name' , name);

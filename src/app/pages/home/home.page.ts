@@ -21,14 +21,14 @@ export class HomePage implements OnInit {
     singleNumber: '0'
   } ;
 
-  date = moment().locale('fa').format(' dddd,D MMMM YYYY     ');
+  date = moment().locale('fa').format(' dddd,D MMMM YYYY');
   getTodayDate = new Date();
   data: FilterData = {
     from: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate(),
     until: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate()
   };
-    textDateFrom = 'از تاریخ';
-  textDateUntil = '  تا تاریخ';
+  loading = false;
+
   constructor(private toast: ToastService , private service: AppService , private router: Router) { }
 
   ngOnInit() {
@@ -60,6 +60,9 @@ export class HomePage implements OnInit {
             console.log(this.response.errorMessage);
             this.toast.presentToast('عدم ارتباط با سرور').then();
           }
+        }, error => {
+          this.toast.presentToast('عدم ارتباط با سرور').then();
+          console.log(error);
         }
     );
   }

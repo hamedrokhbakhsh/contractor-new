@@ -19,7 +19,7 @@
 
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="register()">
 
   <ion-card-content>
 
@@ -52,8 +52,7 @@
   </ion-card-content>
   </ion-card>
 
-  <ion-card>
-
+  <ion-card (click)="single()">
     <ion-card-content>
       <div class="container-fluid">
         <div class="row d-flex justify-content-between">
@@ -86,11 +85,12 @@
 
   <ion-fab (click)="filterButton()" vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button style="color: #0d0d0d" class="font ">
-       <span style="color: #0d0d0d">فیلتر</span>
+      <ion-icon color="dark" *ngIf="!filter && !loading" name="add"></ion-icon>
+      <ion-icon color="dark" *ngIf="filter && !loading" name="close-outline"></ion-icon>
+      <ion-spinner *ngIf="loading"></ion-spinner>
     </ion-fab-button>
 
   </ion-fab>
-
 
 
 

@@ -11,12 +11,15 @@ import {DateComponent} from '../../shared/date/date.component';
 import {FilterComponent} from '../../shared/filter/filter.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule
-  ],
-  declarations: [HomePage, FilterComponent, DateComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule
+    ],
+    exports: [
+        FilterComponent
+    ],
+    declarations: [HomePage, FilterComponent, DateComponent]
 })
 export class HomePageModule {}
