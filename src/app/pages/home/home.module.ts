@@ -7,19 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import {DateComponent} from '../../shared/date/date.component';
-import {FilterComponent} from '../../shared/filter/filter.component';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        HomePageRoutingModule
+        HomePageRoutingModule,
+        SharedModule
     ],
     exports: [
-        FilterComponent
     ],
-    declarations: [HomePage, FilterComponent, DateComponent]
+    declarations: [HomePage]
 })
 export class HomePageModule {}

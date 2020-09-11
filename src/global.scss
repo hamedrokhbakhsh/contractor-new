@@ -39,3 +39,14 @@ ion-router-outlet > *{
   --background: rgba(203, 169, 248, 0.9);
   color: #000
 }
+.mydatepicker{
+  --background: rgba(0,0,0,0.7);
+  --background-rgb: 0,0,0;
+  --ion-background-color: rgba(0,0,0,0.7);
+  --ion-background-color-rgb: 0,0,0;
+  --ion-item-color: #fff
+}
+.picker-above-highlight{
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, var(--background, var(--ion-background-color, #000))), to(rgba(var(--background-rgb, var(--ion-background-color-rgb, 0, 0, 0)), 0.8)));
+  background: linear-gradient(to bottom, var(--background, var(--ion-background-color, #000)) 20%, rgba(var(--background-rgb, var(--ion-background-color-rgb, 0, 0, 0)), 0.8) 100%)
+}

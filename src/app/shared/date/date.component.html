@@ -1,5 +1,5 @@
 
-  <ion-item (click)="openDatePicker()">
+  <ion-item lines="full" (click)="openDatePicker()">
     <ion-label><span>{{title}}</span></ion-label>
     <ion-label slot="end" color="primary" class="ion-text-end" >{{date?.pDate?.locale('fa').format('dddd,jDD jMMMM  jYYYY')}}</ion-label>
   </ion-item>

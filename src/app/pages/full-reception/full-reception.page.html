@@ -1,21 +1,20 @@
-
 <ion-header>
-<ion-toolbar class="no-bg">
+    <ion-toolbar class="no-bg">
 
-    <ion-buttons slot="end">
-        <ion-button (click)="back()"><ion-icon name="arrow-back"></ion-icon></ion-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">ثبت نامی</ion-title>
-    <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-</ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="back()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">ثبت نامی</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
-
-
 
 
 
@@ -28,3 +27,6 @@
 
 </ion-content>
 
+<ion-footer *ngIf="filter" class="m-0" style="--background: rgba(0, 0, 0, 0.8);">
+    <app-filter (filterData)="dataFromFilter($event)"></app-filter>
+</ion-footer>

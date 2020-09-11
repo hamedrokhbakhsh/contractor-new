@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DetailReceptionPageRoutingModule } from './detail-reception-routing.module';
 
 import { DetailReceptionPage } from './detail-reception.page';
-import {HomePageModule} from '../home/home.module';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import {HomePageModule} from '../home/home.module';
     FormsModule,
     IonicModule,
     DetailReceptionPageRoutingModule,
-    HomePageModule
+    SharedModule
   ],
   declarations: [DetailReceptionPage]
 })

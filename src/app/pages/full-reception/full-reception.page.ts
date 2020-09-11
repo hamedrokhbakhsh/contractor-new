@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {DetailsData} from '../../models/details-data';
+import {FilterData} from '../../models/filter-data';
 
 @Component({
   selector: 'app-full-reception',
@@ -27,5 +27,11 @@ export class FullReceptionPage implements OnInit {
 
   filterButton() {
     this.filter = !this.filter ;
+  }
+
+  dataFromFilter(filterData: FilterData) {
+    //this.getData(filterData);
+    this.filter = !this.filter ;
+    console.log(filterData);
   }
 }

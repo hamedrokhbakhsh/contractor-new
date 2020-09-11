@@ -96,6 +96,7 @@ export class DateComponent implements OnInit {
     const picker = await this.pickerController.create({
       mode: 'ios',
       keyboardClose: true,
+      cssClass:'mydatepicker',
       buttons: [{
         text: 'انتخاب',
         handler: (value) => {
