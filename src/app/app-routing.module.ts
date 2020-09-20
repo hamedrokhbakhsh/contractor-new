@@ -16,17 +16,17 @@ const routes: Routes = [
   },
   {
     path: 'get-ip',
-    canActivate: [IpAuthGuard],
+    // canActivate: [IpAuthGuard],
     loadChildren: () => import('./auth/get-ip/get-ip.module').then( m => m.GetIpPageModule)
   },
   {
     path: 'login',
-    canActivate: [ UnAuthGuard] ,
+    // canActivate: [ UnAuthGuard] ,
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'home',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     loadChildren: () => import('./pages/default/default.module').then( m => m.DefaultPageModule)
   }
 ];

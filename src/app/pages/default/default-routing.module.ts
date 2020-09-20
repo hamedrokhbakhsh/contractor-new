@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'full',
-        loadChildren: () => import('../full-reception/full-reception-routing.module').then(value => value.FullReceptionPageRoutingModule)
+        loadChildren: () => import('../full-reception/full-reception.module').then(value => value.FullReceptionPageModule)
       },
       {
         path: 'detail',
