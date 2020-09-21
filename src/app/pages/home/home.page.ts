@@ -15,10 +15,12 @@ export class HomePage implements OnInit {
   filter = false;
   response: ResponseModel;
   serverData: FirstPage = {
-    registerNumber : '0' ,
-    registerCount: '0' ,
-    singleCount: '0' ,
-    singleNumber: '0'
+    RegisterNum : '0' ,
+    RegisterTotalCost: '0' ,
+    EducationNum: '0' ,
+    EducationTotalCost: '0',
+    SubServiceNum: '0' ,
+    SubServiceTotalCost: '0'
   } ;
 
   date = moment().locale('fa').format(' dddd,D MMMM YYYY');
@@ -28,6 +30,7 @@ export class HomePage implements OnInit {
     until: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate()
   };
   loading = false;
+  name = localStorage.getItem('name')
 
   constructor(private toast: ToastService , private service: AppService , private router: Router) { }
 
@@ -42,27 +45,34 @@ export class HomePage implements OnInit {
   dataFromFilter(filterData: FilterData) {
     this.getData(filterData);
     this.filter = !this.filter ;
-    console.log(filterData);
+    // console.log(filterData);
   }
 
   getData(data: FilterData){
+    this.loading = true ;
     this.service.firstPage(data).subscribe(
 
         res => {
           this.response = res ;
           if (this.response.status){
-            console.log(this.response.data);
-            this.serverData.registerNumber = this.response.data[0].registerNumber;
-            this.serverData.registerCount = this.response.data[0].registerCount ;
-            this.serverData.singleNumber =  this.response.data[0].singleNumber ;
-            this.serverData.singleCount = this.response.data[0].singleCount ;
+            //  console.log(this.response.data);
+            this.serverData.RegisterNum = this.response.data.RegisterNum;
+            this.serverData.RegisterTotalCost = this.response.data.RegisterTotalCost;
+            this.serverData.SubServiceNum = this.response.data.SubServiceNum;
+            this.serverData.SubServiceTotalCost = this.response.data.SubServiceNum;
+            this.loading =false
           }else {
             console.log(this.response.errorMessage);
             this.toast.presentToast('عدم ارتباط با سرور').then();
+            this.loading =false
+
           }
         }, error => {
           this.toast.presentToast('عدم ارتباط با سرور').then();
           console.log(error);
+          this.loading =false
+
+
         }
     );
   }

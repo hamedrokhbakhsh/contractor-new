@@ -5,6 +5,7 @@ import {AppService} from '../../services/app.service';
 import {ToastService} from '../../services/toast.service';
 import {DetailsData} from '../../models/details-data';
 import {ResponseModel} from '../../models/response-model';
+import {Register} from '../../models/register';
 
 @Component({
   selector: 'app-detail-reception',
@@ -14,18 +15,14 @@ import {ResponseModel} from '../../models/response-model';
 export class DetailReceptionPage implements OnInit {
   filter = false;
   response: ResponseModel ;
+  serverData: Register[] = [];
 
-  receiveData: DetailsData[] = [
-    {
-      title: 'خالی',
-      total: '0'
-    }
-  ] ;
   getTodayDate = new Date();
   data: FilterData = {
     from: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate(),
     until: this.getTodayDate.getFullYear() + '/' + (this.getTodayDate.getMonth() + 1) + '/' + this.getTodayDate.getDate()
   };
+  private loading = false;
 
   constructor(private router: Router, private service: AppService, private toast: ToastService) { }
 
@@ -39,20 +36,27 @@ export class DetailReceptionPage implements OnInit {
 
 
   getData(data: FilterData){
+    this.loading = true ;
     this.service.single(data).subscribe(
+
         res => {
           this.response = res ;
           if (this.response.status){
-
-            this.receiveData = this.response.data ;
-            if (this.receiveData.length === 0){
+            this.serverData = this.response.data ;
+            if (this.serverData.length === 0){
               this.toast.presentToast('اطلاعاتی وجود ندارد').then();
             }
-
+            this.loading = false;
           }else {
+            console.log(this.response.errorMessage);
             this.toast.presentToast('عدم ارتباط با سرور').then();
-          }
+            this.loading = false;
 
+          }
+        }, error => {
+          this.toast.presentToast('عدم ارتباط با سرور').then();
+          console.log(error);
+          this.loading = false;
         }
     );
   }
@@ -69,6 +73,7 @@ export class DetailReceptionPage implements OnInit {
 
   getDataFromFilter(data: FilterData) {
     this.getData(data);
+    this.filter = false;
   }
 
   filterButton() {

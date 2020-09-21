@@ -23,21 +23,21 @@ export class AppService {
 
   authUser(data: any): Observable<any> {
 
-    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>('http://localhost:5001/contractor/login', data);
+     const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>(`${url}/login`, data);
   }
   firstPage(data: FilterData): Observable<any> {
-    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>('http://localhost:5001/contractor/first-page', data);
+    const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>(`${url}/first-page`, data);
   }
 
   register(data: FilterData): Observable<any> {
-    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>('http://localhost:5001/contractor/register', data);
+     const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+    return this.http.post<ResponseModel>(`${url}/register`, data);
   }
 
   single(data: FilterData): Observable<any> {
-    // const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
+     const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
     return this.http.post<ResponseModel>('http://localhost:5001/contractor/single', data);
   }
 

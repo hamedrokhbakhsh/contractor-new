@@ -1,6 +1,8 @@
 export interface FirstPage {
-    registerNumber: string;
-    registerCount: string ;
-    singleNumber: string ;
-    singleCount: string;
+    RegisterNum: string;
+    RegisterTotalCost: string ;
+    EducationNum: string ;
+    EducationTotalCost: string;
+    SubServiceNum: string ;
+    SubServiceTotalCost: string ;
 }

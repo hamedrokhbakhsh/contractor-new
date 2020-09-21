@@ -3,7 +3,7 @@
     <ion-buttons slot="end">
       <img class="logo-header ion-margin-start" height="50px" src="assets/logo.svg"/>
     </ion-buttons>
-    <ion-title class="ion-text-center font">نام شما</ion-title>
+    <ion-title class="ion-text-center font"><h6>{{name}}</h6></ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -14,7 +14,7 @@
   <ion-card>
     <ion-card-content class="justify-content-between d-flex">
           <ion-col class="text-right"><span> امروز :</span> </ion-col>
-          <ion-col class="ion-text-end"><span>{{date}}</span></ion-col>
+          <ion-col class="ion-text-end"><span>{{date | perNumber}}</span></ion-col>
 
 
     </ion-card-content>
@@ -36,7 +36,7 @@
           تعداد
         </div>
         <div class="col">
-          {{serverData.registerNumber}}  <ion-icon name="body-outline"></ion-icon>
+          {{serverData.RegisterNum | perNumber}}  <ion-icon name="body-outline"></ion-icon>
         </div>
       </div>
       <div class="row d-flex justify-content-between">
@@ -44,7 +44,7 @@
           مبلغ
         </div>
         <div class="col">
-          {{serverData.registerCount}}<span class="mr-2">ریال</span>
+          {{serverData.RegisterTotalCost | perNumber}}<span class="mr-2">ریال</span>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
             تعداد
           </div>
           <div class="col">
-            {{serverData.singleNumber}}   <ion-icon name="body-outline"></ion-icon>
+            {{serverData.SubServiceNum | perNumber}}   <ion-icon name="body-outline"></ion-icon>
           </div>
         </div>
         <div class="row d-flex justify-content-between">
@@ -74,7 +74,7 @@
             مبلغ
           </div>
           <div class="col">
-            {{serverData.singleCount}}<span class="mr-2">ریال</span>
+            {{serverData.SubServiceTotalCost | perNumber}}<span class="mr-2">ریال</span>
           </div>
         </div>
       </div>

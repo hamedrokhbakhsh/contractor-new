@@ -18,20 +18,32 @@
 
 
 
-  <ion-card *ngFor="let data of receiveData">
+  <ion-card *ngFor="let model of serverData">
 
     <ion-card-content>
 
 
-      <ion-card-header class="ion-text-right">{{data.title}}</ion-card-header>
       <div class="container-fluid">
-
+        <div class="row d-flex justify-content-between">
+          <div class="col text-right">
+            <ion-icon  name="checkmark-done-outline" class="ml-3"></ion-icon>
+            <ion-label class="font">{{model.Service_Text}}</ion-label>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col text-right">
+            اسم :
+          </div>
+          <div class="col">
+            {{model.MemberFullName}} <ion-icon name="body-outline"></ion-icon>
+          </div>
+        </div>
         <div class="row d-flex justify-content-between">
           <div class="col text-right">
             مبلغ
           </div>
           <div class="col">
-            {{data.total}}
+            {{model.OneSessionAmount |  number}}<span class="mr-2">ریال</span>
           </div>
         </div>
       </div>
@@ -49,13 +61,11 @@
 
 
 
-
-
-
-  <ion-fab (click)="filterButton()" vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button style="color: #0d0d0d" class="font ">
-      <ion-icon color="dark" *ngIf="!filter" name="add"></ion-icon>
-      <ion-icon color="dark" *ngIf="filter" name="close-outline"></ion-icon>
+  <ion-fab  (click)="filterButton()" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button [disabled]="loading" style="color: #0d0d0d" class="font ">
+      <ion-icon color="dark" *ngIf="!filter && !loading" name="add"></ion-icon>
+      <ion-icon color="dark" *ngIf="filter && !loading" name="close-outline"></ion-icon>
+      <ion-spinner *ngIf="loading"></ion-spinner>
     </ion-fab-button>
 
   </ion-fab>
