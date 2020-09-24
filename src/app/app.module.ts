@@ -16,6 +16,8 @@ import {UnAuthGuard} from './guard/un-auth.guard';
 import {IpAuthGuard} from './guard/ip-auth.guard';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {TokenInterceptorService} from './services/token-interceptor.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import {TokenInterceptorService} from './services/token-interceptor.service';
     IonicModule.forRoot(),
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
