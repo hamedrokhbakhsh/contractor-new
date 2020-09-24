@@ -28,17 +28,17 @@ export class AppService {
   }
   firstPage(data: FilterData): Observable<any> {
     const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>(`${url}/first-page`, data);
+    return this.http.post<ResponseModel>(`${url}/contractor/first-page`, data);
   }
 
   register(data: FilterData): Observable<any> {
      const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>(`${url}/register`, data);
+    return this.http.post<ResponseModel>(`${url}/contractor/register`, data);
   }
 
   single(data: FilterData): Observable<any> {
      const url = 'https://cors-anywhere.herokuapp.com/' + localStorage.getItem('url-address');
-    return this.http.post<ResponseModel>('http://localhost:5001/contractor/single', data);
+    return this.http.post<ResponseModel>(`${url}/contractor/single`, data);
   }
 
 
